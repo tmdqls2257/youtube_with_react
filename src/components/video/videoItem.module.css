@@ -1,0 +1,21 @@
+.video {
+  justify-content: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  list-style: none;
+  width: 320px;
+  margin: 30px 20px;
+  cursor: pointer;
+  transition: all 300ms ease-out;
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.39);
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video:hover {
+  transform: scale(1.1);
+}
