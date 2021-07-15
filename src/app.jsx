@@ -6,27 +6,22 @@ import Nav from './components/nav/nav';
 import styles from './app.module.css';
 
 
-function App() {
+function App({youtubeServer}) {
   const [videos, setVideos] = useState([]);
+  const search = query => {
+    youtubeServer.search(query).then(result => setVideos(result));
+  };
   useEffect(()=>{
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
-    
-    fetch("https://youtube.googleapis.com/youtube/v3/videos?key=AIzaSyACklw79EzAcgQf9HuB4rJJYDsHHpBs-Ik&part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=25&regionCode=US&key=AIzaSyACklw79EzAcgQf9HuB4rJJYDsHHpBs-Ik", requestOptions)
-      .then(response => response.json())
-      .then(result => setVideos(result.items))
-      .catch(error => console.log('error', error));
+    youtubeServer.mostPopularVideo().then(result => setVideos(result));
   }, []);
   return (
-    <>
-    <Header />
+    <div className={styles.app}>
+    <Header onSearch={search} />
     <section className={styles.content}>
     <Nav />
     <Videolist videos={videos}/>
     </section>
-    </>
+    </div>
   );
 }
 

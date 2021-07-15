@@ -12,15 +12,13 @@ code {
     monospace;
 }
 
-i {
-  font-size: var(--fontsize-large);
-  margin: 0 1rem;
+* {
+  box-sizing: border-box;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+i {
+  font-size: var(--fontsize-large);
+  margin: 0 var(--marginsize-small);
 }
 
 a {
@@ -36,7 +34,13 @@ a {
   --fontsize-medium: 1rem;
   --fontsize-small: 0.5rem;
 
+  /* image-size */
   --image-size: 2rem;
+
+  /* margin-size */
+  --marginsize-small: 1rem;
+  --marginsize-medium: 2rem;
+  --marginsize-large: 3rem;
 
   /* color */
   --red-color: #ff0100;
