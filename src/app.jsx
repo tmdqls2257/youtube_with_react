@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import Header from './components/header';
+import './app.module.css';
+import Header from './components/header/header';
 import Videolist from './components/video/videolist';
-import Nav from './components/nav';
+import Nav from './components/nav/nav';
+import styles from './app.module.css';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
     <Header />
-    <section className='content'>
+    <section className={styles.content}>
     <Nav />
     <Videolist videos={videos}/>
     </section>

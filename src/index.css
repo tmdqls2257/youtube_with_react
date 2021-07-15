@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+i {
+  font-size: var(--fontsize-large);
+  margin: 0 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: var(--grey-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+:root {
+  /* font-size */
+  --fontsize-large: 2rem;
+  --fontsize-medium: 1rem;
+  --fontsize-small: 0.5rem;
+
+  --image-size: 2rem;
+
+  /* color */
+  --red-color: #ff0100;
+  --grey-color: #606060;
+}
