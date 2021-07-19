@@ -1,5 +1,16 @@
-.content {
+.app {
+  max-width: 100%;
+}
+
+.list {
   display: flex;
   flex-direction: row;
   height: 100%;
+  flex: 1 1 30%;
+}
+.content {
+  display: flex;
+}
+.detail {
+  flex: 1 1 70%;
 }

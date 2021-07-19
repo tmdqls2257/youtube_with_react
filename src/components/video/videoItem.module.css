@@ -7,7 +7,19 @@
   margin: 30px 20px;
   cursor: pointer;
   transition: all 300ms ease-out;
-  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.39);
+  border: 1px solid lightgray;
+  box-shadow: 3px 3px 5px 0px rgba(191, 191, 191, 0.53);
+}
+
+.video.list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title.list {
+  white-space: normal;
 }
 
 .title {

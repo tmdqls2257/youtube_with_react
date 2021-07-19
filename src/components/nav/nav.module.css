@@ -1,3 +1,9 @@
 .icon {
   margin: 32px;
 }
+.container.none {
+  display: none;
+}
+.container.visable {
+  display: block;
+}

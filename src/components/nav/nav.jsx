@@ -1,33 +1,35 @@
-import React, { Component } from 'react';
+
 import styles from './nav.module.css';
 
-class Nav extends Component {
-  render() {
-    return (
-      <aside>
-        <a className={styles.icon} href="#">
-        <i class="fas fa-home"></i>
-        <span>홈</span>
-        </a>
+import React from 'react';
 
-        <a className={styles.icon} href="#">
-        <i class="fas fa-compass"></i>
-        <span>탐색</span>
-        </a>
+const Nav = ({display}) => {
+  const displayType = display === 'none' ? styles.none : styles.visable
 
-        <a className={styles.icon} href="#">
-        <i class="fab fa-youtube-square"></i>
-        <span>구독</span>
-        </a>
+  return (
+    <aside className={`${styles.container} ${displayType}`}>
+      <a className={styles.icon} href="#">
+      <i class="fas fa-home"></i>
+      <span>홈</span>
+      </a>
 
-        <a className={styles.icon} href="#">
-        <i class="fas fa-box"></i>
-        <span>보관함</span>
-        </a>
+      <a className={styles.icon} href="#">
+      <i class="fas fa-compass"></i>
+      <span>탐색</span>
+      </a>
 
-      </aside>
-    );
-  }
-}
+      <a className={styles.icon} href="#">
+      <i class="fab fa-youtube-square"></i>
+      <span>구독</span>
+      </a>
+
+      <a className={styles.icon} href="#">
+      <i class="fas fa-box"></i>
+      <span>보관함</span>
+      </a>
+
+    </aside>
+  );
+};
 
 export default Nav;
