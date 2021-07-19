@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+}
+
 .video {
   justify-content: flex-start;
   display: inline-flex;
@@ -15,11 +19,18 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.metadata.list {
   align-items: center;
+  height: 180px;
+  width: 320px;
 }
 
 .title.list {
-  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .title {

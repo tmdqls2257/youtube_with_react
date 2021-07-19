@@ -7,11 +7,13 @@ const Videoitem = ({video: {snippet}, video, onVideoClick, display}) => {
   const displayType = display === 'list' ? styles.list : styles.grid;
 
   return(
-<li onClick={()=>onVideoClick(video)} className={`${styles.video} ${displayType}`}>
-  <img src={snippet.thumbnails.medium.url} alt="" />
-  <div>
-  <h2 className={`${styles.title} ${displayType}`}>{snippet.title}</h2>
-  <p  className={styles.channelTitle}>{snippet.channelTitle}</p>
+<li onClick={()=>onVideoClick(video)} className={`${styles.container} ${displayType}`}>
+  <div className={`${styles.video} ${displayType}`}>
+    <img className={styles.thumbnail} src={snippet.thumbnails.medium.url} alt="" />
+    <div className={`${styles.metadata} ${displayType}`} >
+      <h2 className={`${styles.title} ${displayType}`}>{snippet.title}</h2>
+      <p  className={styles.channelTitle}>{snippet.channelTitle}</p>
+    </div>
   </div>
 </li>
   );
