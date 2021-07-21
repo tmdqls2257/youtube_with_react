@@ -1,0 +1,4 @@
+.detail {
+  margin-top: var(--marginsize-medium);
+  max-height: 100%;
+}

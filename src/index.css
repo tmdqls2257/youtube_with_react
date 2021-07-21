@@ -46,3 +46,9 @@ a {
   --red-color: #ff0100;
   --grey-color: #606060;
 }
+@media screen and (max-width: 500px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}

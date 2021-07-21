@@ -16,27 +16,27 @@ function App({youtubeServer}) {
   }
 
   const search = query => {
-    youtubeServer.search(query).then(result => setVideos(result));
+    youtubeServer.searchVideo(query).then(video => {setVideos(video); setSelected(null);});
   };
 
   useEffect(()=>{
-    youtubeServer.mostPopularVideo().then(result => setVideos(result));
+    youtubeServer.mostPopularVideo().then(video => setVideos(video));
   }, []);
 
   return (
     <div className={styles.app}>
-    <Header onSearch={search} />
-    <section className={styles.content}>
+      <Header onSearch={search} />
+      <section className={styles.content}>
         {selectedVideo && (
-          <div className={styles.detail}>
+          <div display={videos ? 'none' : 'grid'} className={styles.detail}>
             <Detail video={selectedVideo} />
           </div>
         )}
-    <section className={styles.list}>
-    <Nav display={selectedVideo ? 'none' : 'grid'}/>
-    <Videolist display = {selectedVideo ? 'list' : 'grid'} onVideoClick={selectVideo} videos={videos}/>
-    </section>
-    </section>
+        <section className={styles.list}>
+          <Nav display={`${selectedVideo ? 'none' : 'grid'}`}/>
+          <Videolist display = {`${selectedVideo ? 'list' : 'grid'}`} onVideoClick={selectVideo} videos={videos}/>
+        </section>
+      </section>
     </div>
   );
 }

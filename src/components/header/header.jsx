@@ -11,14 +11,15 @@ const Header = ({onSearch}) => {
     onSearch(value);
   };
 
-  const onClick = (event) => {
+  const onClick = () => {
     handleClick();
   };
 
 
-  const onKeyPress = (event) => {
-    if(event.key === 'Enter'){};
-    handleClick();
+  const onkeyPress = (event) => {
+    if(event.code === "Enter"){
+      handleClick();
+    };
   };
 
   return (
@@ -30,7 +31,7 @@ const Header = ({onSearch}) => {
       </section>
 
       <section className={styles.search}>
-      <input ref={inputRef} className={styles.input} onKeyPress={onKeyPress} type="search" placeholder='Search'/>
+      <input ref={inputRef} className={styles.input} onKeyPress={onkeyPress} type="search" placeholder='Search'/>
       <button className={styles.button} onClick={onClick}>
         <i className="fas fa-search"></i>
       </button>

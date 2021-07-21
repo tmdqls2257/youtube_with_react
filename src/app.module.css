@@ -6,11 +6,18 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  flex: 1 1 30%;
+  flex: 1 1 10%;
 }
 .content {
   display: flex;
 }
 .detail {
-  flex: 1 1 70%;
+  flex: 1 1 90%;
+}
+@media screen and (max-width: 1000px) {
+  .content,
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -9,7 +9,7 @@ class youtube {
 
   async mostPopularVideo(){
     try {
-      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?key=${this.key}&part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=25&regionCode=US`, this.requestOptions);
+      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${this.key}`, this.requestOptions);
       const result_1 = await response.json();
       return result_1.items;
     } catch (error) {
