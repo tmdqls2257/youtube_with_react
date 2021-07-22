@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './app.module.css';
 import Header from './components/header/header';
 import Videolist from './components/video/videolist';
@@ -15,9 +15,11 @@ function App({youtubeServer}) {
     setSelected(video);
   }
 
-  const search = query => {
-    youtubeServer.searchVideo(query).then(video => {setVideos(video); setSelected(null);});
-  };
+  const search = useCallback(
+    query => {
+      setSelected(null);
+      youtubeServer.searchVideo(query).then(video => {setVideos(video); setSelected(null);});
+    }, [youtubeServer]);
 
   useEffect(()=>{
     youtubeServer.mostPopularVideo().then(video => setVideos(video));

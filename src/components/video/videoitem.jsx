@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './videoItem.module.css';
 
-const Videoitem = ({video: {snippet}, video, onVideoClick, display}) => {
+const Videoitem = memo(({video: {snippet}, video, onVideoClick, display}) => {
   //props를 deconstracting하여 video안에 있는 snippet을 가져옵니다.
 
   const displayType = display === 'list' ? styles.list : styles.grid;
@@ -19,7 +19,7 @@ const Videoitem = ({video: {snippet}, video, onVideoClick, display}) => {
   </div>
 </li>
   );
-  };
+  });
 
 
 export default Videoitem;
