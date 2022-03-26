@@ -2,7 +2,6 @@
 
 - React.js
 - CSS#
-- VsCode
 - PostCSS
 - axios
 
